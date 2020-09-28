@@ -10,12 +10,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <h1>Lista</h1>
+  <div class="flex">
+    <input type="text" name="barra input" placeholder="Aggiungi alla lista..." class="add" id="input">
+    <button type="button" name="button" class="add" id="agg">Aggiungi</button>
+  </div>
 
-  <ul class="list"></ul>
+
+  <ol class="list"></ol>
 
   <script id="list-template" type="text/x-handlebars-template">
-    <li>{{}}</li>
-    <li>{{}}</li>
+    <li id={{id}}>
+      <input type="text" name="barra input" value="{{text}}" class="input_list">
+      <button type="button" name="button" class="update add">Modifica</button>
+      <span id="delete">&otimes;</span>
+    </li>
   </script>
 <script type="text/javascript" src="js/menu.js"></script>
 </body>
