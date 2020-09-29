@@ -69,7 +69,7 @@ $(document).ready(function(){
               "url" : "http://157.230.17.132:3033/todos",
               "method": "POST",
               "data" : {
-                "text" : add.data[i],
+                "text" : add,
               },
               "success": function (data){
                 addElement(data);
@@ -87,12 +87,16 @@ $(document).ready(function(){
 
 //Modificare un elemento della Lista
   $(".list").on("click", ".update", function() {
-    var text_mod = $(".input_list").val();
+
+    var elm = $(this).parent();
+    var id = elm.attr("id");
+
+    var text_mod = elm.children("input").val();
 
     $.ajax(
       {
         "url" : "http://157.230.17.132:3033/todos/"+id,
-        "method": "PUT",
+        "method": "PATCH",
         "data": {
           "text": text_mod,
         },
